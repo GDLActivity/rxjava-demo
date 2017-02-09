@@ -9,6 +9,11 @@ public class Profile {
     private String login;
     private String url;
 
+    @Override
+    public String toString() {
+        return String.format("%s [%s]", login, url);
+    }
+
     public int getId() {
         return id;
     }

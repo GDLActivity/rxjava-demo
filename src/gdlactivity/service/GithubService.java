@@ -3,6 +3,7 @@ package gdlactivity.service;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 import java.util.List;
 
@@ -11,6 +12,8 @@ import java.util.List;
  */
 public interface GithubService {
 
-    @GET("https://api.github.com/users?since={since}")
-    Call<List<Profile>> getUsers(@Path("since") int since);
+    public static final String BASE_URL = "https://api.github.com/";
+
+    @GET("users")
+    Call<List<Profile>> getUsers(@Query("since") int since);
 }
